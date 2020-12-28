@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+  
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+<main>
+    <header>TOP Library</header>
+    <div class="add">
+        <div class="tooltip"> 
+            <button id="add-button">
+                +
+            </button>
+            <span class="tooltiptext">Add a book</span>
+        </div>
+    </div>
+    <div class="lib">
+
+    </div>
+    
+    <div id='mymodal'>
+    <div class="popup">
+        <form action="" method="post">
+            <label for="title">Title</label><br>
+            <input type="text" name="title" id="title"><br>
+            <label for="author">Author</label><br>
+            <input type="text" name="author" id="title"><br>
+            <label for="pageNumber">Number of Pages</label><br>
+            <input type="text" name="pageNumber" id="pageNumber"><br>
+            <label for="read" class="container">I've read it
+                <input type="checkbox" name="read" id="read">
+                <span class="checkmark"></span>
+            </label>
+            <button id="submit">SUBMIT</button>
+        </form>
+    </div>
+    </div>
+
+</main>
+
+
+<script src="./script.js"></script>
+</body>
+
+</html>
