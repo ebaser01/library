@@ -9,8 +9,14 @@
 <body>
   
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 <main>
+    <div id='login'>
+        <div id="firebaseui-auth-container"></div>
+    </div>
     <header>TOP Library</header>
     <div class="add">
         <div class="tooltip"> 
@@ -20,17 +26,19 @@
             <span class="tooltiptext">Add a book</span>
         </div>
     </div>
-    <div class="lib">
+
+    
+    <div id="lib">
 
     </div>
     
     <div id='mymodal'>
     <div class="popup">
-        <form action="" method="post">
+        <form id='addForm'>
             <label for="title">Title</label><br>
             <input type="text" name="title" id="title"><br>
             <label for="author">Author</label><br>
-            <input type="text" name="author" id="title"><br>
+            <input type="text" name="author" id="author"><br>
             <label for="pageNumber">Number of Pages</label><br>
             <input type="text" name="pageNumber" id="pageNumber"><br>
             <label for="read" class="container">I've read it
