@@ -159,11 +159,17 @@ function updateDisplay(){
           lib.appendChild(newBook.cloneNode(true));
           var liblength=(document.getElementsByClassName('slider-button')).length;
           (document.getElementsByClassName('slider-button'))[liblength-1].addEventListener('change',function(){updateReadStatus(this.parentNode.parentNode.parentNode.parentNode.id);});
-      })
+          (document.getElementsByClassName('del-button'))[liblength-1].addEventListener('click',function(){deleteBook(this.parentNode.parentNode.id);});
+        })
     });
     
   }
   
+}
+function deleteBook(bookid){
+  console.log('hello');
+  messagesRef.child(userId).child(bookid).remove();
+  updateDisplay();
 }
 
 function updateReadStatus(bookid){
@@ -177,6 +183,16 @@ function updateReadStatus(bookid){
 
 const bookSkeleton = document.createElement('div');
 bookSkeleton.className = 'book';
+
+const imgdiv = document.createElement('div');
+imgdiv.className = 'del-div';
+const delbutton = document.createElement('button');
+delbutton.className = 'del-button';
+const img = document.createElement('img');
+img.src = './delete.svg';
+img.className = 'delete-icon';
+delbutton.appendChild(img);
+imgdiv.appendChild(delbutton);
 const authorName = document.createElement('p');
 authorName.className = 'cardAuthor';
 const pTitle = document.createElement('p');
@@ -186,6 +202,8 @@ pageNum.className = 'cardpageNum';
 const readStatus = document.createElement('p');
 readStatus.className = 'cardRead';
 readStatus.innerHTML = '<div class="switch-button"><label class="switch"><input type="checkbox" class="slider-button"><span class="slider round"></span></label></div>';
+
+
 bookSkeleton.appendChild(pTitle);
 bookSkeleton.appendChild(authorName);
 bookSkeleton.appendChild(pageNum);
@@ -195,3 +213,4 @@ readText.className = 'readText';
 readStatus.insertBefore(readText, readStatus.firstChild);
 
 bookSkeleton.appendChild(readStatus);
+bookSkeleton.appendChild(imgdiv);

@@ -162,7 +162,7 @@ box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.377);
     padding: 10px;
     border: solid 2px white;
     width: 190px;
-    height: 240px;
+    height: 260px;
     border-radius: 5%;
     margin: 15px;
     background-color: rgb(87, 26, 110);
@@ -204,6 +204,35 @@ box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.377);
 .switch-button{
     display: inline-block;
     margin-right: -5px;
+}
+
+.del-div{
+    width: 100%;
+    height: 30px;
+}
+.delete-icon{
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin: auto;
+    margin-top: -8px;
+}
+.del-button{
+    display: block;
+    background-color: transparent;
+    border: none;
+    margin:auto;
+}
+.del-button:hover{
+    cursor: pointer;
+
+}
+.del-button:active{
+    transform: scale(0.8);
+}
+.del-button:focus{
+    outline: none;
+
 }
 
 #mymodal{
